@@ -4,39 +4,49 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Module {
-	
+
 	private String id;
 	private List<Student> studentList;
 	private List<CourseProgramme> courseList;
-	
+
 	public Module(String id) {
 		this.setId(id);
 		this.studentList = new ArrayList<Student>();
 		this.courseList = new ArrayList<CourseProgramme>();
 	}
-	
+
 	public void addStudentModule(Student student) {
-		studentList.add(student);
-		student.addModule(this);
+		if (!studentList.contains(student)) {
+			studentList.add(student);
+			student.addModule(this);
+		}
 	}
-	
+
 	public void removeStudentModule(Student student) {
-		studentList.remove(student);
+		if (studentList.contains(student)) {
+			studentList.remove(student);
+		}
 	}
-	
-	public void addCourse(CourseProgramme cp){
-		courseList.add(cp);
-		cp.addModuleCourse(this);
+
+	public void addCourse(CourseProgramme cp) {
+		if (!courseList.contains(cp)) {
+			courseList.add(cp);
+			cp.addModuleCourse(this);
+		}
 	}
-	
+
 	public void removeCourse(CourseProgramme cp) {
-		courseList.remove(cp);
-		cp.removeModuleCourse(this);
+		if (courseList.contains(cp)) {
+			courseList.remove(cp);
+			cp.removeModuleCourse(this);
+		}
 	}
-	
+
+	// Accessor & Mutator Methods
 	public String getId() {
 		return id;
 	}
+
 	public void setId(String id) {
 		this.id = id;
 	}
@@ -55,6 +65,12 @@ public class Module {
 
 	public void setCourseList(List<CourseProgramme> courseList) {
 		this.courseList = courseList;
+	}
+	
+	@Override
+	public String toString() {
+		
+		return super.toString();
 	}
 
 }

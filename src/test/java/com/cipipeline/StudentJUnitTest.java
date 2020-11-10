@@ -16,11 +16,6 @@ import org.junit.Test;
  *
  */
 public class StudentJUnitTest {
-	public static void main(String[] args) {
-		Student student = new Student("Adam", "12-05-2000", 20, 17310461);
-		System.out.println(student.getUsername());
-	}
-
 	/**
 	 * @throws java.lang.Exception
 	 */

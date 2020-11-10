@@ -8,7 +8,7 @@ public class Student {
 	private int age, id;
 	private List<Module> enrolledModules;
 	private CourseProgramme coursePrg;
-	
+
 	public Student(String name, String dob, int age, int id) {
 		this.setName(name);
 		this.setDob(dob);
@@ -16,27 +16,30 @@ public class Student {
 		this.setId(id);
 		enrolledModules = new ArrayList<Module>();
 	}
-	
-	
+
 	public String getUsername() {
-		String username = name+age;
+		String username = name + age;
 		return username;
 	}
-	
+
 	public void addModule(Module module) {
-		enrolledModules.add(module);
-		module.addStudentModule(this);
+		if (!enrolledModules.contains(module)) {
+			enrolledModules.add(module);
+			module.addStudentModule(this);
+		}
 	}
-	
+
 	public void removeModule(Module module) {
+		if(enrolledModules.contains(module)) {
 		enrolledModules.remove(module);
 		module.removeStudentModule(this);
+		}
 	}
-	
+
 	public void removeStudentCourse() {
 		this.coursePrg = null;
 	}
-	
+
 	// Accessor & Mutator Methods
 
 	public String getName() {
@@ -87,5 +90,10 @@ public class Student {
 		this.coursePrg = coursePrg;
 	}
 	
+	@Override
+	public String toString() {
+		String str = "**********************************"+"\n"+"Username: "+this.getUsername()+"\n"+"Name: "+name+"\n"+"Age: "+age+"\n"+"D.O.B: "+dob+"\n"+"Student ID: "+id+"\n"+"**********************************";
+		return str;
+	}
 
 }

@@ -19,20 +19,34 @@ public class CourseProgramme {
 	}
 	
 	public void addStudentCourse(Student student) {
+		if(!studentList.contains(student)) {
+			studentList.add(student);
+			student.setCoursePrg(this);
+		}
 		
 	}
 	
 	public void removeStudentCourse(Student student) {
-		
+		if(studentList.contains(student)) {
+			studentList.remove(student);
+			student.removeStudentCourse();
+		}
 	}
 	
 	public void addModuleCourse(Module module) {
-		
+		if(!modulesList.contains(module)) {
+			modulesList.add(module);
+			module.addCourse(this);
+		}
 	}
 	
 	public void removeModuleCourse(Module module) {
-		
+		if(modulesList.contains(module)) {
+			modulesList.remove(module);
+			module.removeCourse(this);
+		}
 	}
+	// Accessor & Mutator Methods
 
 	public String getCourseName() {
 		return courseName;
@@ -72,6 +86,12 @@ public class CourseProgramme {
 
 	public void setStudentList(List<Student> studentList) {
 		this.studentList = studentList;
+	}
+	
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
 	}
 	
 
