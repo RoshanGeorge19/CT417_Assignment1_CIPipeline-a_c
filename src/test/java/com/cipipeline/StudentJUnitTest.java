@@ -8,9 +8,6 @@ import java.util.List;
 
 import org.joda.time.DateTime;
 public class StudentJUnitTest {
-	
-
-
 	private Student student_1;
 	private Student student_2;
 	private Module module_1;
