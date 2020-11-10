@@ -18,7 +18,7 @@ public class Student {
 	}
 
 	public String getUsername() {
-		String username = name + age;
+		String username = name +"_"+age;
 		return username;
 	}
 
