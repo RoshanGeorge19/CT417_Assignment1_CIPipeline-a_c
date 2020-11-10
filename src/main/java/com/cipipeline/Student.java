@@ -5,7 +5,7 @@ public class Student {
 	private String name, dob;
 	private int age, id;
 	// modules enrolled
-	// Programme course
+	// Programme course enrolled
 	
 	public Student(String name, String dob, int age, int id) {
 		this.setName(name);
