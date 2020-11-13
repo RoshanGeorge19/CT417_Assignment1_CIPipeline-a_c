@@ -67,10 +67,28 @@ public class Module {
 		this.courseList = courseList;
 	}
 	
+	public String getElementsCourseList() {
+		StringBuilder sbCL = new StringBuilder();
+		for(CourseProgramme cp : courseList) {
+			sbCL.append(cp.getCourseName());
+		}
+		String str = sbCL.toString();
+		return str;
+	}
+	
+	
+	public String getElementsStudentList() {
+		StringBuilder sbSL = new StringBuilder();
+		for(Student s : studentList) {
+			sbSL.append(s.getUsername());
+		}
+		String str = sbSL.toString();
+		return str;
+	}
 	@Override
 	public String toString() {
-		String str = id;
-		return str;
+//		String str = id + "\n" + getElementsCourseList() + "_" + getElementsStudentList();
+		return getElementsCourseList();
 	}
 
 }

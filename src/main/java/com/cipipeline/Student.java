@@ -90,10 +90,18 @@ public class Student {
 		this.coursePrg = coursePrg;
 	}
 	
+	public String getElementsEnrolledModules() {
+		StringBuilder sbEM = new StringBuilder();
+		for(Module module : enrolledModules) {
+			sbEM.append(module.getId());
+		}
+		String str = sbEM.toString();
+		return str;
+	}
 	
 	@Override
 	public String toString() {
-		String str = "**********************************"+"\n"+"Username: "+this.getUsername()+"\n"+"Name: "+name+"\n"+"Age: "+age+"\n"+"D.O.B: "+dob+"\n"+"Student ID: "+id+"\n"+"**********************************";
+		String str ="Username: "+this.getUsername()+"\n"+"Name: "+name+"\n"+"Age: "+age+"\n"+"D.O.B: "+dob+"\n"+"Student ID: "+id+"\n"+getEnrolledModules();
 		return str;
 	}
 	

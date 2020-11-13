@@ -14,8 +14,8 @@ public class CourseProgrammeJUnitTest {
 	private Student student_1;
 	private Student student_2;
 	private Module module_1;
+	private Module module_2;
 	private CourseProgramme course_1;
-	private CourseProgramme course_2;
 	
 	@Before
 	public void setUp() throws Exception {
@@ -23,22 +23,25 @@ public class CourseProgrammeJUnitTest {
 		student_2 = new Student("MarkRober", "09-09-00", 21, 13245679);
 	
 		module_1 = new Module("EE451");		
+		module_2 = new Module("CT417");		
 		course_1 = new CourseProgramme("BP", new DateTime("2019-07-01T00:00:00Z"), new DateTime("2029-07-01T00:00:00Z"));
-		course_2 = new CourseProgramme("BL", new DateTime("2009-07-01T00:00:00Z"), new DateTime("2029-07-01T00:00:00Z"));
 	}
 	@Test
-	public void remove_student() {
+	public void remove_student_test() {
 		course_1.addStudentCourse(student_1);
-		List<Student> currentResult = course_1.getStudentList();
-		assert(currentResult.contains(student_1));
-		assertFalse(currentResult.contains(student_2));
+		course_1.addStudentCourse(student_2);
+		course_1.removeStudentCourse(student_2);
+		String correctResult = "MadaYehaf_21";
+		String currentResult = course_1.getElementStudentList();
+		assertTrue(correctResult.equals(currentResult));
 	}
-
 	@Test
-	public void remove_module() {
+	public void remove_module_test() {
 		course_1.addModuleCourse(module_1);
-		course_1.removeModuleCourse(module_1);
-		List<Module> currentResults = course_1.getModulesList();
-		assert(currentResults.contains(module_1));
+		course_1.addModuleCourse(module_2);
+		course_1.removeModuleCourse(module_2);
+		String correctResult = "EE451";
+		String currentResult = course_1.getElementModulesList();
+		assertTrue(correctResult.equals(currentResult));
 	}
 }

@@ -1,5 +1,6 @@
 package com.cipipeline;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.joda.time.DateTime;
@@ -15,6 +16,8 @@ public class CourseProgramme {
 		this.setCourseName(courseName);
 		this.setStartDate(startDate);
 		this.setEndDate(endDate);
+		this.modulesList = new ArrayList<Module>();
+		this.studentList = new ArrayList<Student>();
 				
 	}
 	
@@ -88,9 +91,27 @@ public class CourseProgramme {
 		this.studentList = studentList;
 	}
 	
+	public String getElementModulesList() {
+		StringBuilder sbML = new StringBuilder();
+		for(Module module : modulesList) {
+			sbML.append(module.getId());
+		}
+		String str = sbML.toString();
+		return str;
+	}
+	
+	public String getElementStudentList() {
+		StringBuilder sbSL = new StringBuilder();
+		for(Student student : studentList) {
+			sbSL.append(student.getUsername());
+		}
+		String str = sbSL.toString();
+		return str;
+	}
+	
 	@Override
 	public String toString() {
-		String str = this.courseName +"\n"+ this.getStartDate() +"\n"+ this.getEndDate();
+		String str = this.courseName +"\n"+ this.getStartDate() +"\n"+ this.getEndDate()+"\n"+getElementModulesList()+"\n"+getElementStudentList();
 		return str;
 	}
 	
