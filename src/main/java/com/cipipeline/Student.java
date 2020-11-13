@@ -90,10 +90,12 @@ public class Student {
 		this.coursePrg = coursePrg;
 	}
 	
+	
 	@Override
 	public String toString() {
 		String str = "**********************************"+"\n"+"Username: "+this.getUsername()+"\n"+"Name: "+name+"\n"+"Age: "+age+"\n"+"D.O.B: "+dob+"\n"+"Student ID: "+id+"\n"+"**********************************";
 		return str;
 	}
+	
 
 }

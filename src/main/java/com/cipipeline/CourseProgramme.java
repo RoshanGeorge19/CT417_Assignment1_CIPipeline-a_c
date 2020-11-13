@@ -90,8 +90,8 @@ public class CourseProgramme {
 	
 	@Override
 	public String toString() {
-		// TODO Auto-generated method stub
-		return super.toString();
+		String str = this.courseName +"\n"+ this.getStartDate() +"\n"+ this.getEndDate();
+		return str;
 	}
 	
 

@@ -69,8 +69,8 @@ public class Module {
 	
 	@Override
 	public String toString() {
-		
-		return super.toString();
+		String str = id;
+		return str;
 	}
 
 }
