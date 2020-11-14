@@ -111,11 +111,9 @@ public class CourseProgramme {
 
 	@Override
 	public String toString() {
-		String str = "Course Name: " + "\n" + this.courseName + 
-					 "Start Date: " + "\n" + this.getStartDate() + 
-					 "End Date: " + "\n" + this.getEndDate() +
-					 "Modules in Course" + "\n" + getElementModulesList() + 
-					 "Students Enrolled: " + "\n" + getElementStudentList();
+		String str = "Course Name: " + this.courseName + "\n" + "Start Date: " + this.getStartDate() + "\n"
+				+ "End Date: " + this.getEndDate() + "\n" + "Modules in Course" + getElementModulesList()
+				+ "Students Enrolled: " + getElementStudentList();
 		return str;
 	}
 

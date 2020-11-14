@@ -18,7 +18,7 @@ public class Student {
 	}
 
 	public String getUsername() {
-		String username = name +"_"+age;
+		String username = name + "_" + age + "; ";
 		return username;
 	}
 
@@ -30,9 +30,9 @@ public class Student {
 	}
 
 	public void removeModule(Module module) {
-		if(enrolledModules.contains(module)) {
-		enrolledModules.remove(module);
-		module.removeStudentModule(this);
+		if (enrolledModules.contains(module)) {
+			enrolledModules.remove(module);
+			module.removeStudentModule(this);
 		}
 	}
 
@@ -89,21 +89,21 @@ public class Student {
 	public void setCoursePrg(CourseProgramme coursePrg) {
 		this.coursePrg = coursePrg;
 	}
-	
+
 	public String getElementsEnrolledModules() {
 		StringBuilder sbEM = new StringBuilder();
-		for(Module module : enrolledModules) {
+		for (Module module : enrolledModules) {
 			sbEM.append(module.getId());
 		}
 		String str = sbEM.toString();
 		return str;
 	}
-	
+
 	@Override
 	public String toString() {
-		String str ="Username: "+this.getUsername()+"\n"+"Name: "+name+"\n"+"Age: "+age+"\n"+"D.O.B: "+dob+"\n"+"Student ID: "+id+"\n"+getEnrolledModules();
+		String str = "Username: " + this.getUsername() + "\n" + "Name: " + name + "\n" + "Age: " + age + "\n"
+				+ "D.O.B: " + dob + "\n" + "Student ID: " + id + "\n" + getEnrolledModules();
 		return str;
 	}
-	
 
 }
