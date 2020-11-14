@@ -1,3 +1,8 @@
+/*
+ * Author: Roshan George
+ * Date: 14/11/2020
+ * Description: A class to create modules, and get relevant module info.					
+ */
 package com.cipipeline;
 
 import java.util.ArrayList;
@@ -16,7 +21,7 @@ public class Module {
 	}
 
 	public void addStudentModule(Student student) {
-		if (!studentList.contains(student)) {
+		if (!studentList.contains(student)) { // checks if student already exists
 			studentList.add(student);
 			student.addModule(this);
 		}
@@ -67,6 +72,7 @@ public class Module {
 		this.courseList = courseList;
 	}
 
+	// Returns a string of the enrolled courses in the module
 	public String getElementsCourseList() {
 		StringBuilder sbCL = new StringBuilder();
 		for (CourseProgramme cp : courseList) {
@@ -76,6 +82,7 @@ public class Module {
 		return str;
 	}
 
+	// Returns a string of the students in the course
 	public String getElementsStudentList() {
 		StringBuilder sbSL = new StringBuilder();
 		for (Student s : studentList) {
@@ -87,8 +94,8 @@ public class Module {
 
 	@Override
 	public String toString() {
-//		String str = id + "\n" + getElementsCourseList() + "_" + getElementsStudentList();
-		return getElementsCourseList();
+		String str = id + "\n" + getElementsCourseList() + "_" + getElementsStudentList();
+		return str;
 	}
 
 }

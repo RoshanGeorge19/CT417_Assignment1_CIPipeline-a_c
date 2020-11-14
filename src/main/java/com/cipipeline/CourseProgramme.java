@@ -1,3 +1,9 @@
+/*
+ * Author: Roshan George
+ * Date: 14/11/2020
+ * Description: A class to create courses, and get relevant course info.					
+ */
+
 package com.cipipeline;
 
 import java.util.ArrayList;
@@ -22,7 +28,7 @@ public class CourseProgramme {
 	}
 
 	public void addStudentCourse(Student student) {
-		if (!studentList.contains(student)) {
+		if (!studentList.contains(student)) { // checks if student already exists
 			studentList.add(student);
 			student.setCoursePrg(this);
 		}
@@ -91,6 +97,7 @@ public class CourseProgramme {
 		this.studentList = studentList;
 	}
 
+	// Returns a string of the modules in the course
 	public String getElementModulesList() {
 		StringBuilder sbML = new StringBuilder();
 		for (Module module : modulesList) {
@@ -100,6 +107,7 @@ public class CourseProgramme {
 		return str;
 	}
 
+	// Returns a string of the students in the course
 	public String getElementStudentList() {
 		StringBuilder sbSL = new StringBuilder();
 		for (Student student : studentList) {

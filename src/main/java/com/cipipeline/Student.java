@@ -1,3 +1,8 @@
+/*
+ * Author: Roshan George
+ * Date: 14/11/2020
+ * Description: A class to create students, and get relevant student info.					
+ */
 package com.cipipeline;
 
 import java.util.ArrayList;
@@ -23,7 +28,7 @@ public class Student {
 	}
 
 	public void addModule(Module module) {
-		if (!enrolledModules.contains(module)) {
+		if (!enrolledModules.contains(module)) { // checks if student already exists
 			enrolledModules.add(module);
 			module.addStudentModule(this);
 		}
@@ -90,6 +95,7 @@ public class Student {
 		this.coursePrg = coursePrg;
 	}
 
+	// Returns a string of the modules the students are in
 	public String getElementsEnrolledModules() {
 		StringBuilder sbEM = new StringBuilder();
 		for (Module module : enrolledModules) {
