@@ -40,7 +40,7 @@ public class CourseProgrammeJUnitTest {
 		course_1.addModuleCourse(module_1);
 		course_1.addModuleCourse(module_2);
 		course_1.removeModuleCourse(module_2);
-		String correctResult = "EE451";
+		String correctResult = "EE451; ";
 		String currentResult = course_1.getElementModulesList();
 		assertTrue(correctResult.equals(currentResult));
 	}
